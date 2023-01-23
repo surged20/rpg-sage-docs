@@ -7,22 +7,24 @@ function createLinks() {
 	const items = $("div.item[id]").toArray();
 	items.forEach(item => {
 		const id = item.id;
-		const h = $(item).find("h4,h5");
-		let which = links;
-		if (h.is("h5")) {
+		const $item = $(item);
+		const $h = $item.find("h1,h2,h3,h4,h5").first();
+		let which = links, pushItem = true;
+		if ($item.data("itemSub")) {
 			which = children;
+			pushItem = $item.data("itemNav");
 		}else {
 			pushChildren();
 		}
-		which.push(`<a class="nav-link" href="#${id}">${h.text().trim()}</a>`);
+		if (pushItem) {
+			which.push(`<a class="nav-link" href="#${id}">${$h.text().trim()}</a>`);
+		}
 	});
 	pushChildren();
 	return links.join("");
 
 	function pushChildren() {
-		if (children.find(child => child.includes("2a."))) {
-			links.push(`<nav class="nav flex-column">${children.join("")}</nav>`);
-		}
+		links.push(`<nav class="nav flex-column">${children.join("")}</nav>`);
 		children.length = 0;
 	}
 }
@@ -122,17 +124,23 @@ async function loadItems() {
 	while (findItemSnippets().length) {
 		for (const div of divs) {
 			const $div = $(div);
-			const isSub = $div.data("itemSub");
-			const tag = generateTag(isSub);
 
 			// fetch and and create item
 			const html = await fetchSnippetHtml($div);
 			if (html) {
+				// get snippet main div
 				const $item = $("<div/>").append(html).children().first();
 
+				// ensure we pass along parent/sub status
+				$item.data("itemSub", $div.data("itemSub"));
+
+				// ensure we can force sub items to navbar
+				$item.data("itemNav", $div.data("itemNav"));
+
 				// create item html and set id and letter/number
+				const tag = generateTag($div.data("itemSub"));
 				$item.attr("id", `item-${tag}`);
-				tagItemHeader($item.find("h4,h5").first(), tag, isSub);
+				tagItemHeader($item, tag);
 
 				// add to page
 				$div.replaceWith($item);
@@ -152,9 +160,11 @@ async function loadItems() {
 	}
 
 	/** helper for adding tag to item header */
-	function tagItemHeader($h, tag, isSub) {
+	function tagItemHeader($item, tag) {
+		const isSub = $item.data("itemSub");
 		const el = isSub ? "h5" : "h4";
 		const pad = isSub ? "ps-4" : "";
+		const $h = $item.find("h1,h2,h3,h4,h5").first();
 		const text = $h.text();
 		$h.replaceWith(`<${el} class="${pad}">${tag}. ${text}</${el}>`);
 	}

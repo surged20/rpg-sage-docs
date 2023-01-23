@@ -1,0 +1,61 @@
+<div class="item">
+	<h5>Basic Game Setup</h5>
+	<p>
+		Send these commands by posting them to the <code>my-game-gm</code> channel.
+		<br/><small>make sure you are in the <code>#my-game-gm</code> channel.</small>
+	</p>
+	<p class="text-center">
+		<img src="https://rpgsage.io/images/quick/send-to-my-game-gm.jpg"/>
+	</p>
+	<p>
+		Create a game called: "My Game".
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!game create name="My Game"</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>game</code>, SubCommand <code>create</code>, and Argument <code>name</code> with a value of <code>My Game</code>.</small>
+	</div>
+	<p class="text-center mb-4">
+		<img src="https://rpgsage.io/images/quick/game-create-my-game.jpg"/>
+	</p>
+	<p>
+		Update the Game Master channel to allow commands, admin commands, dice, and search for game masters while refusing players.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel set admin=true commands=true dice=true search=true gamemaster=write player=none</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>set</code>, and Arguments <code>admin=true</code>, <code>commands=true</code>, <code>dice=true</code>, <code>search=true</code>, <code>gamemaster=write</code>, and <code>player=none</code>.</small>
+	</div>
+	<p>
+		Add the In Character channel to the game, allowing game masters and players to use dialog and dice.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ic dialog=true dice=true gamemaster=write player=write</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ic</code>, <code>dialog=true</code>, <code>dice=true</code>, <code>gamemaster=write</code>, and <code>player=write</code>.</small>
+	</div>
+	<p>
+		Add the Out of Character channel to the game, allowing game masters and players access to all of the features.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ooc admin=true commands=true dialog=true dice=true search=true gamemaster=write player=write</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ooc</code>, <code>admin=true</code>, <code>commands=true</code>, <code>dialog=true</code>, <code>dice=true</code>, <code>search=true</code>, <code>gamemaster=write</code>, and <code>player=write</code>.</small>
+	</div>
+	<p>
+		Add the Game Master to the game.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!gm add @UserMention</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>gm</code>, SubCommand <code>add</code>, and Argument <code>@UserMention</code>.</small>
+	</div>
+	<p>
+		Add the Players to the game.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!player add @Player1Mention @Player2Mention @Player3Mention @Player4Mention</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 mb-1 p-1 mb-4 d-none">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>player</code>, SubCommand <code>add</code>, and Arguments <code>@Player1Mention</code>, <code>@Player2Mention</code>, <code>@Player3Mention</code>, <code>@Player4Mention</code>.</small>
+	</div>
+</div>

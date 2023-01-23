@@ -1,0 +1,42 @@
+<div class="item">
+	<h5>Adding Characters</h5>
+	<p>
+		At this point, you have a simple game setup with no characters.
+	</p>
+	<div class="alert alert-info ms-3 me-3 m-0 p-1">
+		Sage currently uses two images for a given character: their Avatar and their Token.
+		The <strong>Avatar</strong> is the picture that is embedded on the right side of dialog posts, and is intended to be bigger pictures (bust, half, or full body).
+		The <strong>Token</strong> is the image to the left dialog posts, in the place where your user/profile pic would be.
+		When using the map feature, it will automatically add PCs' Token to the map.
+	</div>
+	<p class="text-center mb-4">
+		<img src="https://rpgsage.io/images/quick/avatar-vs-token.jpg"/>
+	</p>
+	<p>
+		To add NPCs, the GM can run the following <small>best run in <code>#my-game-gm</code> to hide them from players</small>.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!npc create name="Cool NPC Name" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 mb-4 p-1 d-none">
+		<small>This command has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>npc</code>, SubCommand <code>create</code>, and Arguments <code>name="Cool NPC Name"</code>, <code>token="http://url_to_token_image"</code>, and <code>avatar="http://url_to_avatar_image"</code>.</small>
+	</div>
+	<p>
+		To add PCs, the players can run the following <small>best run in <code>#my-game-ooc</code> to avoid IC clutter</small>.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!pc create name="Fancy PC Name" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 mb-4 p-1 d-none">
+		<small>This command has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>pc</code>, SubCommand <code>create</code>, and Arguments <code>name="Fancy PC Name"</code>, <code>token="http://url_to_token_image"</code>, and <code>avatar="http://url_to_avatar_image"</code>.</small>
+	</div>
+	<p>
+		To add companions, familiars, or hirelings to PCs, players can run the following
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!companion create charname="Fancy PC Name" name="Fluffy Familiar Name" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 mb-4 p-1 d-none">
+		<small>This command has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>companion</code>, SubCommand <code>create</code>, and Arguments <code>charname="Fancy PC Name"</code>, <code>name="Fluffy Familiar Name"</code>, <code>token="http://url_to_token_image"</code>, and <code>avatar="http://url_to_avatar_image"</code>.</small>
+	</div>
+	<p>
+		NOTE! If you are concerned about the image's url or hosting, you can always post the image in chat and then get the image's url by right clicking the image.
+	</p>
+</div>

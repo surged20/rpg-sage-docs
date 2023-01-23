@@ -1,0 +1,18 @@
+<div class="item">
+	<h5>Dice Commands</h5>
+	<p>
+		In channels with <code>dice=true</code> <small>which should be all the channels configured above</small> Sage will read <em>everything</em> you post looking for bracket dice notation to roll dice.
+		<br/>When rolling dice, Sage will @UserMention the user rolling the dice and a GM <small>if one is configured, which we did above</small>.
+		<br/>
+		<br/>Simple Dice rolls
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>[1d20+1 attack]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>[2d6+3 damage]</code>
+		<br/>
+		<br/>Combined Attack/Damage rolls
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>[1d20+1 attack; 2d6+3 damage]</code>
+		<br/>
+		<br/>Targeted Attack/Damage rolls <small>If the attack fails, the damage will not be rolled.</small>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>[1d20+1>10 attack; 2d6+3 damage]</code>
+		<br/><br/><small>If you want more advanced dice features specific to PF2e, such as automatically calculating crits or fatal dice, you simply need to set your game to PF2e: `sage!!game set game="PF2e"`</small>
+	</p>
+</div>
