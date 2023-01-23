@@ -1,0 +1,26 @@
+<div class="item">
+	<h5>Dice Macros</h5>
+	<p>
+		<code>sage! help dice macro</code>
+		<br/>
+		<br/>These commands are for managing macros to make complex dice rolls.
+		<br/><code>sage!! macro delete all</code>
+		<br/><code>sage!! macro delete category="{category}"</code>
+		<br/><code>sage!! macro delete name="{name}"</code>
+		<br/><code>sage!! macro details name="{name}"</code>
+		<br/><code>sage!! macro list</code>
+		<br/><code>sage!! macro list category="{category}"</code>
+		<br/><code>sage!! macro move name="{name}" category="{category}"</code>
+		<br/><code>sage!! macro set name="{name}" [{dice}]</code>
+		<br/><code>sage!! macro set name="{name}" category="{category}" [{dice}]</code>
+		<br/>Example: <code>sage!! macro set name="three daggers" category="daggers" [1d20+8;1d6][1d20+4;1d6][1d20;1d6]</code>
+		<br/>Usage: <code>[three daggers]</code>
+		<br/>Example: <code>sage!! macro set name="swords" [3MAP-4#1d20+8{ac};1d6]</code>
+		<br/>Usage: <code>[swords ac=10]</code>
+	</p>
+	<p>
+		Macro Categories are helpful in grouping related macros together, but they also serve a special function for Pathfinder 2e players using imported characters.
+		Macros with the same category name as an imported Pathfinder 2e character name will show up in the imported character's sheet so that you can select then and roll them with the click of a button.
+		<em>(Will provide link to importing documentation as it is finished.)</em>
+	</p>
+</div>
