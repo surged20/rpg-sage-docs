@@ -6,15 +6,15 @@ This repo is for maintaining the user documentation for RPG Sage (https://rpgsag
 
 This will house the primary documentation pages.
 
-# rpgsage.io/index.html
+## rpgsage.io/index.html
 
 This is to be the complete list of all RPG Sage commands.
 
-# rpgsage.io/quick.html
+## rpgsage.io/quick.html
 
 This is to be a Quick Start guide for new users, demonstrating how to create your first Game.
 
-# rpgsage.io/features.html
+## rpgsage.io/features.html
 
 This is to be a list of all the major features, preferrably with screen caps to show them off.
 
