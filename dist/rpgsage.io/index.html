@@ -224,7 +224,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, and Command <code>help</code>.</small>
 	</div>
 	<p>
-		You can change Sage's prefix with the <code>prefix</code> command:
+		A Server Owner or "SageAdmin" can change Sage's prefix with the <code>prefix</code> command:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix set newPrefix</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -232,7 +232,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, SubCommand <code>set</code> and Argument <code>newPrefix</code>.</small>
 	</div>
 	<p>
-		You can also remove Sage's prefix with the <code>prefix</code> command:
+		A Server Owner or "SageAdmin" can also remove Sage's prefix with the <code>prefix</code> command:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix unset</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -240,7 +240,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, and SubCommand <code>unset</code>.</small>
 	</div>
 	<p>
-		If you have unset the prefix, commands look like:
+		When the prefix is unset, commands look like:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>!help</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -301,7 +301,7 @@
 	<h5 class="ps-4">4a. Sage Prefix Admin</h5>
 	<p><code>sage! help admin prefix</code>
 	<br/>
-	<br/>These commands let you set or unset Sage command prefixes.
+	<br/>These commands let a Server Owner or "SageAdmin" set or unset Sage command prefixes.
 	<br/><code>sage!! prefix get</code>
 	<br/><code>sage!! prefix set {commandPrefix; ex: sage}</code>
 	<br/><code>sage!! prefix sync</code>
@@ -360,7 +360,7 @@
 	<h5 class="ps-4">4e. Server Role Admin <small>Not Fully Functional</small></h5>
 	<p><code>sage! help admin server</code>
 	<br/>
-	<br/>These commands are for manging the Roles used for admins of Sage.
+	<br/>These commands are for managing the Roles used for admins of Sage.
 	<br/><code>sage!! server role list</code>
 	<br/><code>sage!! server role remove {ServerRoleType}</code>
 	<br/><code>sage!! server role set @RoleMention {ServerRoleType}</code>
@@ -381,13 +381,13 @@
 		<br /><code>sage!! game archive list</code>
 		<br /><code>sage!! game count</code>
 		<br /><code>sage!! game create name="Dragon Saga: Questbound!"</code>
-		<br /><code>sage!! game create name="Dragon Saga: Questbound!" game="PF2E|NONE"</code>
+		<br /><code>sage!! game create name="Dragon Saga: Questbound!" type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
 		<br /><code>sage!! game details</code>
 		<br /><code>sage!! game list</code>
 		<br /><code>sage!! game role remove {GameRoleType}</code>
 		<br /><code>sage!! game role set @RoleMention {GameRoleType}</code>
 		<br /><code>sage!! game set diceoutput="XXS|XS|S|M|L|XL|XXL|UNSET"</code>
-		<br /><code>sage!! game set game="PF2E|NONE"</code>
+		<br /><code>sage!! game set type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
 		<br /><code>sage!! game set name="Dragon Saga: End Times ..."</code>
 		<br /><code>sage!! role list</code>
 		<br />GameRoleTypes values: Spectator, Player, GameMaster, Cast, Table

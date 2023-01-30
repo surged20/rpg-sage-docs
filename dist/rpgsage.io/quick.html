@@ -206,7 +206,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, and Command <code>help</code>.</small>
 	</div>
 	<p>
-		You can change Sage's prefix with the <code>prefix</code> command:
+		A Server Owner or "SageAdmin" can change Sage's prefix with the <code>prefix</code> command:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix set newPrefix</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -214,7 +214,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, SubCommand <code>set</code> and Argument <code>newPrefix</code>.</small>
 	</div>
 	<p>
-		You can also remove Sage's prefix with the <code>prefix</code> command:
+		A Server Owner or "SageAdmin" can also remove Sage's prefix with the <code>prefix</code> command:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix unset</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -222,7 +222,7 @@
 		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, and SubCommand <code>unset</code>.</small>
 	</div>
 	<p>
-		If you have unset the prefix, commands look like:
+		When the prefix is unset, commands look like:
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>!help</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -297,33 +297,49 @@
 	<p class="text-center mb-4">
 		<img src="https://rpgsage.io/images/docs/game-create-my-game.jpg"/>
 	</p>
+	<div class="alert alert-info ms-3 me-3 m-0 p-1 mb-4">
+		If you are playing a specific game (such as Pathfinder or Starfinder) or system (such as Essence 20), you may want to access features specific to them (such as dice).
+		<small>Essence 20 refers to the underlying game engine used by Renegade Game Studios' G.I. Joe, Power Rangers, and Transformers games.</small>
+	</div>
 	<p>
-		Update the Game Master channel to allow commands, admin commands, dice, and search for game masters while refusing players.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel set admin=true commands=true dice=true search=true gamemaster=write player=none</code>
+		Update the game's type <small>optional step</small>.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!game set type="PF2E"</code>
+		<br/>Acceptable <code>type</code> values are:
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>DND5E</code> <small>DnD 5e</small>, <code>E20</code> <small>Essence 20</small>, <code>PF1E</code> <small>Pathfinder 1e</small>, <code>PF2E</code> <small>Pathfinder 2e</small>, <code>QUEST</code> <small>Quest</small>, and <code>SF</code> <small>Starfinder</small>.
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
 	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
-		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>set</code>, and Arguments <code>admin=true</code>, <code>commands=true</code>, <code>dice=true</code>, <code>search=true</code>, <code>gamemaster=write</code>, and <code>player=none</code>.</small>
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>game</code>, SubCommand <code>set</code>, and Argument <code>type</code> with a value of <code>PF2E</code>.</small>
+	</div>
+	<p>
+		Update the channel type to Game Master, which enables all commands for game masters while ignoring players.
+		(RPG Sage assumes players don't have access to this channel.)
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel set type="GM"</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>set</code>, and Argument <code>type</code>with a value of <code>GM</code>.</small>
 	</div>
 	<p>
 		Add the In Character channel to the game, allowing game masters and players to use dialog and dice.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ic dialog=true dice=true gamemaster=write player=write</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ic type="IC"</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
 	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
-		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ic</code>, <code>dialog=true</code>, <code>dice=true</code>, <code>gamemaster=write</code>, and <code>player=write</code>.</small>
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ic</code> and <code>type=IC</code>.</small>
 	</div>
 	<p>
 		Add the Out of Character channel to the game, allowing game masters and players access to all of the features.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ooc admin=true commands=true dialog=true dice=true search=true gamemaster=write player=write</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!channel add #my-game-ooc type="OOC"</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
 	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
-		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ooc</code>, <code>admin=true</code>, <code>commands=true</code>, <code>dialog=true</code>, <code>dice=true</code>, <code>search=true</code>, <code>gamemaster=write</code>, and <code>player=write</code>.</small>
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>channel</code>, SubCommand <code>add</code>, and Arguments <code>#my-game-ooc</code> and <code>type=OOC</code>.</small>
 	</div>
 	<p>
-		Add the Game Master to the game.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!gm add @UserMention</code>
+		Add the Game Master(s) to the game.
+		You can have as many or as few game masters as you want.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!gm add @GmMention</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
 	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
@@ -331,6 +347,7 @@
 	</div>
 	<p>
 		Add the Players to the game.
+		You can have as many or as few players as you want.
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!player add @Player1Mention @Player2Mention @Player3Mention @Player4Mention</code>
 		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
 	</p>
@@ -429,11 +446,12 @@
 		<br/>
 		<br/>Targeted Attack/Damage rolls <small>If the attack fails, the damage will not be rolled.</small>
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>[1d20+1>10 attack; 2d6+3 damage]</code>
-		<br/><br/><small>If you want more advanced dice features specific to PF2e, such as automatically calculating crits or fatal dice, you simply need to set your game to PF2e: `sage!!game set game="PF2e"`</small>
-		<br/><br/><small>If you want more advanced dice features specific to E20, such as up or down shift, you simply need to set your game to E20: `sage!!game set game="E20"`</small>
+		<br/><br/><small>If you want more advanced dice features specific to PF2e, such as automatically calculating crits or fatal dice, you simply need to set your game to PF2e: `sage!!game set type="PF2e"`</small>
+		<br/><br/><small>If you want more advanced dice features specific to E20, such as up or down shift, you simply need to set your game to E20: `sage!!game set type="E20"`</small>
 	</p>
 </div>
 
+			<br/>
 		</div>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
