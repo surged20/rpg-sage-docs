@@ -405,20 +405,20 @@
 		<br/><code>sage!! channel list {game|server}</code>
 		<br/><code>sage!! channel remove #ChannelReference</code>
 		<br/><code>sage!! channel set {optionKey}="optionValue"</code>
-		<br/>Channel Options <em>(can set multiple options at the same time)</em>:
 		<br/>
-		<br/>- admin="true|false"
-		<br/>- commands="true|false" <em>(also known as non-admin commands)</em>
-		<br/>- dialog="true|false"
-		<br/>- dice="true|false"
-		<br/>- search="true|false"
-		<br/>- - This determines which types of commands (admin, non-admin, dialog, dice, search) are allowed.
+		<br/>Channel Options <em>(can set multiple options at the same time)</em>:
 		<br/>
 		<br/>- crit="timestwo|rolltwice|addmax|unset"
 		<br/>- - TIMESTWO rolls the dice and multiplies the results x2. <em>(default)</em>
 		<br/>- - ROLLTWICE rolls the damage twice and adds the results together.
 		<br/>- - ADDMAX rolls the dice once and then adds max damage to the result. <em>(house rule)</em>
 		<br/>- - UNSET uses the crit method inherited from either the game or the server.
+		<br/>
+		<br/>- dialogtype="embed|post|unset"
+		<br/>- - This determines how Sage's dialog posts are handled.
+		<br/>- - EMBED <small>default</small> uses an embed that includes the character's avatar on the right.
+		<br/>- - POST uses a simple message post <small>some screen readers cannot read Discord embeds)</small>.
+		<br/>- - UNSET uses the dialogtype method inherited from either the game, user, or server.
 		<br/>
 		<br/>- diceoutput="xxs|xs|s|m|l|xl|xxl|rollem|unset"
 		<br/>- - This determines how compact or expanded the dice results are displayed.
@@ -428,19 +428,20 @@
 		<br/>- dicepost="post|embed|unset"
 		<br/>- - POST will output dice results in a simple post.
 		<br/>- - EMBED will output dice results in an embed in a post.
-		<br/>- - ~~REPLY will output dice results in a reply to the input.~~ <em>(future feature)</em>
+		<br/>- - <strike>REPLY will output dice results in a reply to the input.</strike> <em>(future feature)</em>
 		<br/>- - UNSET uses the dicepost method inherited from either the game or the server.
 		<br/>
-		<br/>- game="pf2e|none"
+		<br/>- game="dnd5e|e20|pf1e|pf2e|quest|sf|none"
 		<br/>- - This determines which game is being played.
-		<br/>- - PF2E Currently Pathfinder Second Edition is the only game that Sage recognizes.
-		<br/>- - The primary place this is noticable is the dice engine: PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
+		<br/>- - The primary place this is noticable is the dice engine. For instance, PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
 		<br/>
-		<br/>- gamemaster="none|write"
-		<br/>- player="none|write"
-		<br/>- - NONE The user (gamemaster, player) should not have access to this channel.
-		<br/>- - WRITE The user (gamemaster, player) should have full access to this channel.
-		<br/>- - Note: A channel that is gamemaster=write and player=none is considered a GM only channel and is where secret dice rolls are sent!
+		<br/>- type="ic|ooc|misc|gm|unset"
+		<br/>- - IC denotes an In Character channel, thus only Dialog and Dice are allowed for GMs and Players.
+		<br/>- - OOC denotes an Out of Character channel, thus all Sage commands are allowed for GMs and Players.
+		<br/>- - MISC denotes an Miscellaneous channel, thus all Sage commands are allowed for GMs and Players.
+		<br/>- - GM denotes an Game Master channel, thus all Sage commands are allowed for only GMs.
+		<br/>- - UNSET tells Sage that this isn't a specific channel type, allowing you to customize the options.
+		<br/>- - - Note: A GM only channel is where secret dice rolls are sent!
 	</p>
 </div>
 			<div id="item-5c" class="item">
