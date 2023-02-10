@@ -25,6 +25,10 @@ function fetchFilesToProcess() {
 
 function readSnippet(snippetFilePath) {
 	const updatedSnippetFilePath = snippetFilePath.replace(/^\.\/snippets/, `${srcRootFolderPath}/snippets`);
+	if (!fs.existsSync(updatedSnippetFilePath)) {
+		console.error(`Invalid snippetFilePath: ${snippetFilePath}`);
+		return `<div class="alert alert-danger">Invalid snippetFilePath: ${snippetFilePath}</div>`;
+	}
 	return fs.readFileSync(updatedSnippetFilePath).toString();
 }
 
@@ -66,7 +70,7 @@ function processItemSnippets(file, navItems) {
 			snippetHtml = snippetHtml.replace(/^<div/i, () => `<div id="item-${navItem.key}"`);
 
 			// update the item header to include key (number/letter)
-			snippetHtml = snippetHtml.replace(/<h\d>(.*?)<\/h\d>/i, (_tag, text) => {
+			snippetHtml = snippetHtml.replace(/<header>(.*?)<\/header>/i, (_tag, text) => {
 				// pass label back for building nav later
 				navItem.label = text;
 
@@ -123,9 +127,30 @@ function processNavItems(file, navItems) {
 	}
 }
 
+function removeComments(file) {
+	file.fileContents = file.fileContents.replace(/<\!--(.|\n)*?-->/g, comment => {
+		console.log(`\t\t${comment.replace(/\n|\t/g, char => char === "\n" ? "\\n" : "\\t")}`);
+		return "";
+	});
+}
+
+function now() {
+	const date = new Date(),
+		year = date.getFullYear(),
+		month = String(date.getMonth() + 1).padStart(2, "0"),
+		day = String(date.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}
+
+function updateDate(file) {
+	const updateDateHtml = `<div class="text-center"><small>updated: ${now()}</small></div>`;
+	file.fileContents = file.fileContents.replace(`<div class="alert alert-danger">UPDATE DATE</div>`, updateDateHtml);
+}
+
 function writeFile(file) {
 	const distFilePath = file.filePath.replace("./src", "./dist");
 	fs.writeFileSync(distFilePath, file.fileContents);
+	console.log(`\tSrc file created: ${distFilePath}`);
 }
 
 function processFile(file) {
@@ -133,6 +158,8 @@ function processFile(file) {
 	processItemSnippets(file, navItems);
 	processSnippets(file);
 	processNavItems(file, navItems);
+	removeComments(file);
+	updateDate(file);
 	writeFile(file);
 }
 
@@ -150,9 +177,12 @@ function copyDefaultFiles() {
 			const srcFilePath = `${srcRootFolderPath}/${fileName}`;
 			const distFilePath = `${distFolderPath}/${fileName}`;
 			fs.copyFileSync(srcFilePath, distFilePath);
+			console.log(`\tDist file created: ${distFilePath}`);
 		});
 	});
 }
 
+console.log(`Building ...`);
 processFiles();
 copyDefaultFiles();
+console.log(`Building ... done.`);
