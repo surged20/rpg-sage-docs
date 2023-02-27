@@ -6,18 +6,18 @@
 		<br/>
 		<br/>These commands are for managing macros that make dice rolls easier to use.
 		<br/><code>sage!! macro delete all</code>
-		<br/><code>sage!! macro delete category="{category}"</code>
-		<br/><code>sage!! macro delete name="{name}"</code>
-		<br/><code>sage!! macro details name="{name}"</code>
+		<br/><code>sage!! macro delete category="Melee"</code>
+		<br/><code>sage!! macro delete name="BobScythe"</code>
+		<br/><code>sage!! macro details name="BobScythe"</code>
 		<br/><code>sage!! macro list</code>
-		<br/><code>sage!! macro list category="{category}"</code>
-		<br/><code>sage!! macro move name="{name}" category="{category}"</code>
-		<br/><code>sage!! macro set name="{name}" [{dice}]</code>
-		<br/><code>sage!! macro set name="{name}" category="{category}" [{dice}]</code>
-		<br/>Example: <code>sage!! macro set name="three daggers" category="daggers" [1d20+8;1d6][1d20+4;1d6][1d20;1d6]</code>
-		<br/>Usage: <code>[three daggers]</code>
-		<br/>Example: <code>sage!! macro set name="swords" [3MAP-4#1d20+8{ac};1d6]</code>
-		<br/>Usage: <code>[swords ac=10]</code>
+		<br/><code>sage!! macro list category="Melee"</code>
+		<br/><code>sage!! macro move name="BobScythe" category="Bob the Farmer"</code>
+		<br/><code>sage!! macro set name="BobScythe" [1d20+3 atk; 1d10 S dmg]</code>
+		<br/><code>sage!! macro set name="BobDagger" category="Bob the Farmer" [1d20+2 {ac} atk; 1d4 {type:P} dmg]</code>
+		<br/>Usage: <code>[BobScythe]</code>
+		<br/>Usage: <code>[BobDagger ac=10]</code>
+		<br/>Usage: <code>[BobDagger type=S]</code>
+		<br/>Usage: <code>[BobDagger ac=10 type=S]</code>
 	</p>
 	<p>
 		Macro Categories are helpful in grouping related macros together, but they also serve a special function for Pathfinder 2e players using imported characters.
