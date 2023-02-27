@@ -43,3 +43,6 @@ Added both (previous two items) to left side nav link of Command Guide
 Linked parts of Feature Guide to respective parts of Command Guide
 Reordered Features based on perceived relevance
 Added Command Guide update date to right side nav links
+
+## v0.6.1 (2023-02-27)
+Updated Macro examplest to remove {} brace characters in arguments.
