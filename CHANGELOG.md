@@ -49,3 +49,6 @@ Updated Macro examplest to remove {} brace characters in arguments.
 
 ## v0.6.2 (2023-03-02)
 Updated Prefix command example to properly show two !! characters.
+
+## v0.6.3 (2023-03-02)
+Updated examples to consistently space after the ! character in commands.
