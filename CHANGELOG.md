@@ -46,3 +46,6 @@ Added Command Guide update date to right side nav links
 
 ## v0.6.1 (2023-02-27)
 Updated Macro examplest to remove {} brace characters in arguments.
+
+## v0.6.2 (2023-03-02)
+Updated Prefix command example to properly show two !! characters.
