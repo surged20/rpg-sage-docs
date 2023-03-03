@@ -52,3 +52,6 @@ Updated Prefix command example to properly show two !! characters.
 
 ## v0.6.3 (2023-03-02)
 Updated examples to consistently space after the ! character in commands.
+
+## v0.6.4 (2023-03-02)
+Removed "role list" command from Game Admin until the feature is turned back on.
