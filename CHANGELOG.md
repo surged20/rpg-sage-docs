@@ -59,3 +59,6 @@ Removed "role list" command from Game Admin until the feature is turned back on.
 ## v0.6.5 (2023-03-10)
 Reworded the Quick Guide's mention of expected channels and category.
 Modified right nav template to allow Quick Start date update automation.
+
+## v0.6.6 (2023-04-18)
+Added newuser option to PC update.
