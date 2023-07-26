@@ -62,3 +62,6 @@ Modified right nav template to allow Quick Start date update automation.
 
 ## v0.6.6 (2023-04-18)
 Added newuser option to PC update.
+
+## v0.6.7 (2023-07-26)
+Cannot auto dialog NPCs.
