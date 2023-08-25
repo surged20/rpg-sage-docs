@@ -53,7 +53,7 @@
 			</div>
 			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
 				<a href="index.html">Command Guide</a>
-				<br/><div class="text-center"><small>updated: 2023-07-26</small></div>
+				<br/><div class="text-center"><small>updated: 2023-08-25</small></div>
 			</div>
 			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
 				<a href="quick.html">Quick Start Guide</a>
@@ -99,7 +99,7 @@
 					<br class="d-sm-none"/>
 					Command Guide
 				</h2>
-				<div class="text-center"><small>updated: 2023-07-26</small></div>
+				<div class="text-center"><small>updated: 2023-08-25</small></div>
 			</header>
 
 			<div class="alert alert-info m-2">
@@ -567,6 +567,7 @@
 		<br/><code>sage!! npc delete name="Farmer Bob"</code>
 		<br/><code>sage!! npc details name="Farmer Bob"</code>
 		<br/><code>sage!! npc list "optionalFilter"</code>
+		<br/><code>sage!! npc update name="Farmer Bob" alias="Bob"</code>
 		<br/><code>sage!! npc update name="Farmer Bob" avatar="http://url_to_avatar_image"</code>
 		<br/><code>sage!! npc update name="Farmer Bob" token="http://url_to_token_image"</code>
 		<br/><code>sage!! npc update name="Farmer Bob" color="#FF00AA"</code>
@@ -601,6 +602,7 @@
 		<br/><code>sage!! pc delete name="Bardok the Brave"</code>
 		<br/><code>sage!! pc details name="Bardok the Brave"</code>
 		<br/><code>sage!! pc list "optionalFilter"</code>
+		<br/><code>sage!! pc update name="Bardok the Brave" alias="Bardok"</code>
 		<br/><code>sage!! pc update name="Bardok the Brave" avatar="http://url_to_new_avatar_image"</code>
 		<br/><code>sage!! pc update name="Bardok the Brave" token="http://url_to_new_token_image"</code>
 		<br/><code>sage!! pc update name="Bardok the Brave" color="#FF00AA"</code>
@@ -623,6 +625,7 @@
 		<br /><code>sage!! companion delete charname="Bardok the Cowardly" name="Ser Stallion"</code>
 		<br /><code>sage!! companion details name="Ser Stallion"</code>
 		<br /><code>sage!! companion list "optionalFilter"</code>
+		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" alias="Stallion"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" avatar="http://url_to_avatar_image"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" token="http://url_to_token_image"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" color="#FF00AA"</code>
@@ -645,6 +648,7 @@
 	</p>
 </div>
 			<div id="item-6a" class="item">
+	<span id="dialog-post-command"></span>
 	<h5 class="ps-4">6a. Dialog Post Command</h5>
 	<p><code>{type}::{name}({display name})::(title)::{color}::{avatar}::{content}</code></p>
 	<div class="row m-0">
@@ -714,19 +718,23 @@
 	</div>
 </div>
 			<div id="item-6c" class="item">
-	<h5 class="ps-4">6c. Dialog Alias Commands</h5>
+	<span id="dialog-alias-macros"></span>
+	<h5 class="ps-4">6c. Dialog Alias Macros</h5>
 	<p>
-		These commands are for managing aliases for all your dialog needs.
-		<br/><code>sage!! alias delete {alias}</code>
+		<br/>These commands are for managing advanced dialog alias macros that make repeat dialog easier to use.
+		<br/><code>sage!! alias delete name="AngryBob"</code>
+		<br/><code>sage!! alias details name="AngryBob"</code>
 		<br/><code>sage!! alias list</code>
-		<br/><code>sage!! alias set {alias} {dialog prefix}</code>
-		<br/>
-		<br/>An alias is a simple word or name with no punctation.
-		<br/>A dialog prefix can include an alias and even some content.
-		<br/>Example: <code>sage!! alias set gorm npc::Gorm Greathammer::</code>
+		<br/><code>sage!! alias set name="AngryBob" enemy::Farmer Bob::</code>
+		<br/><code>sage!! alias set name="HappyBob" ally::Farmer Bob::</code>
+		<br/>Usage: <code>angrybob::"Why are you adventurer's always riding through my field!?"</code>
+		<br/>Usage: <code>happybob::"Won't you come in for dinner?"</code>
+	</p>
+	<p>
+		Alias Macros allow you to take a long dialog command and shorten it.
+		Any valid dialog is valid when creating an Alias Macro ... meaning in addition to requiring the type (npc, pc, enemy, familiar) and name, you can include any part of a <a href="https://rpgsage.io/#dialog-post-command">Dialog Post Command</a> in an Alias Macro, even content!
 	</p>
 </div>
-
 			<div id="item-6d" class="item">
 	<h5 class="ps-4">6d. Character Auto Dialog</h5>
 	<p>
