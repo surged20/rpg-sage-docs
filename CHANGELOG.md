@@ -69,3 +69,7 @@ Cannot auto dialog NPCs.
 ## v0.6.8 (2023-08-25)
 Character Update alias=""
 Dialog Alias Macro
+
+## v0.6.9 (2023-09-07)
+Removed Ko-Fi
+Changed Twitter link to BSky link
